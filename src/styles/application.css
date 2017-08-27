@@ -1,0 +1,100 @@
+#video-campaigns-view {
+  padding-top: 50px; }
+  #video-campaigns-view .card-container {
+    padding: 10px; }
+    #video-campaigns-view .card-container img {
+      max-width: 100%;
+      max-height: 400px;
+      width: 100%;
+      min-height: 200px;
+      background-color: #efefef; }
+    #video-campaigns-view .card-container iframe {
+      width: 100%;
+      min-height: 300px; }
+
+.btn.btn-circle {
+  padding: 0;
+  border-radius: 50%;
+  margin: 0;
+  top: auto;
+  right: 3%;
+  bottom: 3%;
+  left: auto;
+  position: fixed; }
+
+.svgIcon {
+  display: block; }
+
+.svg-icon {
+  display: inline-flex;
+  align-self: center;
+  position: relative;
+  height: 1em;
+  width: 1em;
+  margin-right: 0.5em; }
+
+.svg-icon svg {
+  height: 1em;
+  width: 1em; }
+
+.svg-icon.svg-baseline svg {
+  bottom: -0.125em;
+  position: absolute; }
+
+#main-menu {
+  background-color: #3a6467;
+  color: white; }
+  #main-menu a {
+    color: white; }
+    #main-menu a:hover {
+      color: #b3b3b3; }
+    #main-menu a.active {
+      color: #00b491; }
+
+.go-back-button {
+  color: #666666 !important;
+  display: block;
+  margin-bottom: 20px; }
+  .go-back-button i {
+    margin-right: 5px; }
+  .go-back-button:hover {
+    color: #00b491 !important; }
+
+.card .card-body {
+  box-shadow: 0 0 20px #e0e0e0; }
+  .card .card-body a {
+    text-decoration: none;
+    color: black; }
+    .card .card-body a .card-title {
+      font-weight: 700; }
+    .card .card-body a:hover {
+      color: #00b491 !important; }
+  .card .card-body .card-text {
+    color: gray;
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-size: 0.9rem; }
+  .card .card-body .btn {
+    color: white; }
+  .card .card-body iframe {
+    max-width: 100%; }
+
+html,
+body {
+  font-family: 'Muli', sans-serif; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; }
+
+.page-layout {
+  padding: 130px 20px 50px 20px; }
+  .page-layout.reduced-padding {
+    padding-top: 50px; }
+  .page-layout.extended-padding {
+    padding-top: 130px; }
+
+a,
+button {
+  cursor: pointer; }
