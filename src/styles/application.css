@@ -60,6 +60,9 @@
   .go-back-button:hover {
     color: #00b491 !important; }
 
+.card .youtubePlayer {
+  max-width: 100%; }
+
 .card .card-body {
   box-shadow: 0 0 20px #e0e0e0; }
   .card .card-body a {

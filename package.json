@@ -4,8 +4,7 @@
   "private": true,
   "homepage": "https://eduadiez.github.io/MyCampaignVideos",
   "dependencies": {
-    "react-scripts": "1.0.11",
-	  "formsy-react": "^0.19.5",
+    "formsy-react": "^0.19.5",
     "formsy-react-components": "^0.10.1",
     "react": "^15.6.1",
     "react-async-script-loader": "^0.3.0",
@@ -13,7 +12,9 @@
     "react-load-script": "^0.0.6",
     "react-responsive-masonry": "^1.2.3",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.0"
+    "react-router-dom": "^4.2.0",
+    "react-scripts": "1.0.11",
+    "react-youtube": "^7.4.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -23,7 +24,7 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build" 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
