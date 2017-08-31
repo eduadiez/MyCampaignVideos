@@ -33,3 +33,29 @@ a,
 button {
     cursor: pointer;
 }
+
+.containerSlick {
+    margin: 20px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+    color: #333;
+
+    .imgBox{
+        width: 100%;
+        padding: 5px;
+    }
+
+    .slick-next::before{
+        color:black;
+    }
+
+    .slick-prev::before{
+        color:black;
+    }
+
+    * {
+        min-height: 0;
+        min-width: 0;
+      }
+  }

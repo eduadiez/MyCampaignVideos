@@ -41,6 +41,20 @@
   bottom: -0.125em;
   position: absolute; }
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  padding-left: 56.25%; }
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 #main-menu {
   background-color: #3a6467;
   color: white; }
@@ -63,6 +77,13 @@
 .card .youtubePlayer {
   max-width: 100%; }
 
+.card iframe {
+  max-width: 100%; }
+
+.card .carousel-control-next,
+.card .carousel-control-prev {
+  bottom: 15%; }
+
 .card .card-body {
   box-shadow: 0 0 20px #e0e0e0; }
   .card .card-body a {
@@ -79,8 +100,6 @@
     font-size: 0.9rem; }
   .card .card-body .btn {
     color: white; }
-  .card .card-body iframe {
-    max-width: 100%; }
 
 html,
 body {
@@ -101,3 +120,20 @@ body {
 a,
 button {
   cursor: pointer; }
+
+.containerSlick {
+  margin: 20px auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+  color: #333; }
+  .containerSlick .imgBox {
+    width: 100%;
+    padding: 5px; }
+  .containerSlick .slick-next::before {
+    color: black; }
+  .containerSlick .slick-prev::before {
+    color: black; }
+  .containerSlick * {
+    min-height: 0;
+    min-width: 0; }

@@ -6,7 +6,7 @@ import MainMenu from './../components/MainMenu'
 
 // views
 import CampaignsVideos from './../components/views/CampaignsVideos'
-import newCampaignVideos from './../components/views/newCampaignVideos'
+import NewCampaignVideos from './../components/views/NewCampaignVideos'
 
 class Application extends Component {
   render() {
@@ -18,7 +18,8 @@ class Application extends Component {
             {/* Routes are defined here. Persistent data is set as props on components */}
             <Switch>
               <Route exact path="/" component={CampaignsVideos} />
-              <Route exact path="/new" component={newCampaignVideos} />
+              <Route exact path="/new" component={(props) => (<NewCampaignVideos appState={'value'} isNew={true} {...props}/>)} />
+              <Route exact path="/new/:id" component={(props) => (<NewCampaignVideos appState={'value'} isNew={false} {...props}/>)} />
             </Switch>
           </div>
         </div>
