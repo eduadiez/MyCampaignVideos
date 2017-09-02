@@ -40,22 +40,18 @@ button {
     padding-right: 25px;
     width: 100%;
     color: #333;
-
-    .imgBox{
+    .imgBox {
         width: 100%;
         padding: 5px;
     }
-
-    .slick-next::before{
-        color:black;
+    .slick-next::before {
+        color: black;
     }
-
-    .slick-prev::before{
-        color:black;
+    .slick-prev::before {
+        color: black;
     }
-
     * {
         min-height: 0;
         min-width: 0;
-      }
-  }
+    }
+}

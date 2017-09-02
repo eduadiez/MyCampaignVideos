@@ -8,7 +8,6 @@ class CampaignsVideoCard extends Component {
         super(props)
         this.state = {
             activeVideo: props.videos[0],
-            numActiveVideo: 0,
             videos: props.videos,
             id: props.id
         }
@@ -16,7 +15,6 @@ class CampaignsVideoCard extends Component {
 
     render() {
 
-        //const youtubeURLBase = "https://www.youtube.com/watch?v="
         const opts = {
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 modestbranding: 1,
@@ -25,9 +23,9 @@ class CampaignsVideoCard extends Component {
                 controls: 2
             }
         }
+
         return (
             <div className="card">
-
                 <div id={"carouselIndicators_" + this.state.id} className="carousel slide" data-ride="carousel" data-interval="false">
                     <ol className="carousel-indicators">
                         {
@@ -69,8 +67,6 @@ class CampaignsVideoCard extends Component {
                         <span className="sr-only">Next</span>
                     </a>
                 </div>
-
-
 
                 <div className="card-body">
                     <h4 className="card-title">{this.props.title}</h4>
