@@ -9,6 +9,7 @@ class CampaignsVideoCard extends Component {
         this.state = {
             activeVideo: props.videos[0],
             videos: props.videos,
+            videosVimeo: props.videosVimeo,
             id: props.id
         }
     }
@@ -46,15 +47,21 @@ class CampaignsVideoCard extends Component {
                             this.state.videos.map(function (video, idx) {
                                 return (
                                     <div key={idx} className={idx === (this.state.videos.length - 1) ? "carousel-item active" : "carousel-item"}>
-                                        <YouTube
-                                            className='youtubePlayer'
-                                            videoId={video}             // defaults -> null
-                                            opts={opts}                 // defaults -> {}
-                                            onReady={this._onReady}
-                                        />
+                                        {
+                                            video.videoType === "youtube" ?
+                                                <YouTube
+                                                    className='youtubePlayer'
+                                                    videoId={video.videoId}             // defaults -> null
+                                                    opts={opts}                 // defaults -> {}
+                                                    onReady={this._onReady}
+                                                />
+                                            :
+                                            <iframe className='youtubePlayer' type="text/html" src={"https://player.vimeo.com/video/" + video.videoId} title={video.videoId} frameBorder="0" allowFullScreen></iframe>
+                                        }
                                     </div>
                                 )
                             }, this)
+
                         }
 
                     </div>

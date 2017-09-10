@@ -16,7 +16,7 @@ class NewCampaign extends Component {
             description: '',
             blob: null,
             showPlayer: false,
-            inputYoutubeLink: '',
+            inputVideoLink: '',         
             campaignVideoList: [],
             inputDisabled: false,
         };
@@ -75,16 +75,24 @@ class NewCampaign extends Component {
     }
 
     addVideoLink() {
-
-        if (this.state.inputYoutubeLink.trim() !== "") {
+        if (this.state.inputVideoLink.trim() !== "") {
             // TODO 
             // Validation and extraction with regexp
-            var videoId = this.state.inputYoutubeLink.replace("https://www.youtube.com/watch?v=", "").split("&")[0]
-            videoId = videoId.replace("https://youtu.be/", "").split("&")[0]
+            var videoId;
+            var videoType;
+            if(this.state.inputVideoLink.includes("youtu")){
+                videoId = this.state.inputVideoLink.replace("https://www.youtube.com/watch?v=", "").split("&")[0]
+                videoId = videoId.replace("https://youtu.be/", "").split("&")[0]
+                videoType = "youtube"
+            }else{
+                videoId = this.state.inputVideoLink.replace("https://vimeo.com/", "").split("&")[0]
+                videoType = "vimeo"
+            }
+           
 
             this.setState({
-                campaignVideoList: this.state.campaignVideoList.concat([videoId]),
-                inputYoutubeLink: ''
+                campaignVideoList: this.state.campaignVideoList.concat([{videoId,videoType}]),
+                inputVideoLink: ''
             })
         }
     }
@@ -102,8 +110,8 @@ class NewCampaign extends Component {
                 'mobile-webcam-format-fallback' // use inline recorder in Chrome on Android
             ],
             youtube: {
-                title: this.state.title,
-                description: this.state.title
+                title: self.state.title,
+                description: self.state.title
             },
 
             onUploadComplete: function (data) {
@@ -117,7 +125,7 @@ class NewCampaign extends Component {
 
     updateInputValue(event) {
         this.setState({
-            inputYoutubeLink: event.target.value
+            inputVideoLink: event.target.value
         });
     }
 
@@ -135,7 +143,7 @@ class NewCampaign extends Component {
     }
 
     render() {
-        const history = this.props
+        const history = this.props.history
         let { title, description } = this.state
 
         return (
@@ -196,16 +204,17 @@ class NewCampaign extends Component {
                                     </button>
                                 </span>
                                 <input
-                                    name="youtubeLink"
-                                    id="youtube-link"
-                                    ref="youtubeLink"
+                                    name="videoLink"
+                                    id="video-link"
+                                    ref="videoLink"
                                     type="text"
-                                    value={this.state.inputYoutubeLink}
-                                    placeholder="Youtube link..."
+                                    value={this.state.inputVideoLink}
+                                    placeholder="Youtube or Vimeo link..."
                                     className="form-control"
                                     onChange={event => this.updateInputValue(event)}
                                 />
                             </div>
+
 
                             <div className="form-group">
                                 <div className="btn-group" role="group" >
@@ -238,9 +247,15 @@ class NewCampaign extends Component {
                                 {
                                     this.state.campaignVideoList.map(function (listValue) {
                                         return (
-                                            <li className="list-group-item" key={listValue}> 
-                                                <div className="embed-container row"> 
-                                                    <iframe type="text/html" width="120" height="90" src={"http://www.youtube.com/embed/" + listValue} title={listValue} frameBorder="0"> </iframe>
+                                            <li className="list-group-item" key={listValue.videoId}> 
+                                                <div className="embed-container row">
+                                                    {
+                                                        listValue.videoType === "youtube" ?
+                                                            <iframe type="text/html" width="120" height="90" src={"https://www.youtube.com/embed/" + listValue.videoId} title={listValue.videoId} frameBorder="0"> </iframe>
+                                                        :
+                                                            <iframe type="text/html" src={"https://player.vimeo.com/video/" + listValue.videoId} title={listValue.videoId} width="120" height="90" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                    
+                                                    }
                                                 </div>
                                             </li>
                                         )  

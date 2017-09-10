@@ -6,7 +6,8 @@ import auth from 'feathers-authentication-client';
 import io from 'socket.io-client/dist/socket.io';
 
 export const socket = io(process.env.REACT_APP_FEATHERJS_CONNECTION_URL, {
-    transports: ['websocket']
+    transports: ['websocket'],
+    path: '/3035/socket.io'
 })
 
 // socket IO error events
